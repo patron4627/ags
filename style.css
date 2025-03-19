@@ -1,0 +1,522 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header-Bereich */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px); /* Blur-Effekt für den gesamten Bereich */
+    background: rgba(0, 0, 0); /* Transparenter Hintergrund */
+    z-index: 1000;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent; /* Header ohne Hintergrund */
+    box-sizing: border-box;
+}
+
+/* Logo und Titel */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    margin-left: auto; /* Navigation rechts ausrichten */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Vertikal zentrieren */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+}
+
+/* Hamburger Menü */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px; /* Abstand vom rechten Rand */
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Landing Page */
+.landing {
+    position: relative;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    color: white;
+}
+
+.landing-content {
+    max-width: 500px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-all {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Unsere Leistungen */
+.leistungen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 50px;
+    background: white;
+}
+
+.leistungen .text {
+    max-width: 50%;
+}
+
+.leistungen h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.leistungen p {
+    font-size: 18px;
+}
+
+.leistungen .image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Hamburger-Menü auf mobilen Geräten sichtbar */
+    }
+
+    nav ul {
+        display: none; /* Navigation standardmäßig ausblenden */
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background: rgb(0, 0, 0); /* Transparenter Hintergrund */
+        backdrop-filter: blur(20px); /* Blur-Effekt */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        border-radius: 10px;
+        padding: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex; /* Menü anzeigen */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .landing {
+        text-align: center;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .leistungen {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .leistungen .text {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .leistungen .image img {
+        max-width: 80%;
+    }
+}
+
+
+/* Über uns Landing Page */
+.ueber-uns-landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: 0; /* Entfernt den Abstand zum Header */
+}
+
+.hintergrund-bild {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    background: url('ueber-uns-bild.jpg') no-repeat center center/cover;
+    z-index: 1;
+}
+
+.ueber-uns-rechteck {
+    position: relative;
+    width: 50%;
+    margin-left: 45%;
+    background: rgba(243, 243, 243, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 60px;
+    min-height: 70vh;
+    z-index: 2;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .ueber-uns-landing {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hintergrund-bild {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+
+    .ueber-uns-rechteck {
+        width: 100%;
+        margin-left: 0;
+        margin-top: -60px;
+        padding: 30px;
+        min-height: auto;
+    }
+}
+
+.galerie-landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.galerie-rechteck {
+    width: 50%;
+    background: rgba(243, 243, 243, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 60px;
+    min-height: 70vh;
+    z-index: 2;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+}
+
+.galerie-bild {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    background: url('fahrzeug-auswahl.jpg') no-repeat center center/cover;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .galerie-landing {
+        flex-direction: column;
+        height: auto;
+    }
+    .galerie-bild {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    .galerie-rechteck {
+        width: 100%;
+        margin-top: -60px;
+        padding: 30px;
+        min-height: auto;
+    }
+}
+
+/* Galerie Landing Page */
+.galerie-landing {
+    padding: 100px 20px 50px; /* Abstand zum Header und unten */
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.galerie-landing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.bilder-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bilder-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.bilder-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsives Design für Mobilgeräte */
+@media (max-width: 768px) {
+    .galerie-landing {
+        padding: 80px 10px 30px;
+    }
+
+    .bilder-container {
+        grid-template-columns: 1fr; /* Einspaltiges Layout für Mobilgeräte */
+    }
+}
+
+/* Galerie Bilder */
+.galerie-bilder {
+    padding: 50px;
+    background: #f4f4f4;
+}
+
+.bilder-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bilder-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .galerie-bilder {
+        padding: 30px;
+    }
+
+    .bilder-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Kontaktseite */
+.kontakt-landing {
+    position: relative;
+    height: auto; /* Höhe automatisch anpassen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kontakt-bild {
+    width: 100%;
+    height: 50vh;
+    background: url('kundenservice.jpg') no-repeat center center/cover;
+    background-size: cover; /* Bild vollständig anzeigen */
+}
+
+.kontakt-rechteck {
+    width: 100%;
+    background: rgba(243, 243, 243, 0.9);
+    padding: 60px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.maps-container {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px; /* Maximale Breite des iFrames */
+    margin: 30px auto 0;
+}
+
+.maps-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .kontakt-rechteck {
+        padding: 30px;
+    }
+
+    .maps-container iframe {
+        height: 250px; /* Höhe für mobile Geräte anpassen */
+    }
+}
+
+.impressum-landing {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.impressum-rechteck {
+    width: 50%;
+    background: rgba(243, 243, 243, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 60px;
+    min-height: 70vh;
+    z-index: 2;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+.impressum-bild {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+    background: url('unternehmen.jpg') no-repeat center center/cover;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .impressum-landing {
+        flex-direction: column;
+        height: auto;
+    }
+    .impressum-bild {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    .impressum-rechteck {
+        width: 100%;
+        margin-top: -60px;
+        padding: 30px;
+        min-height: auto;
+    }
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+/* Responsives Design für Mobilgeräte */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-btn img {
+        width: 30px;
+        height: 30px;
+    }
+}
